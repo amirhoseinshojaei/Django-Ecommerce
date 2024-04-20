@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -133,3 +134,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Custom User Model
 AUTH_USER_MODEL = 'auths.CustomUser'
+
+# Jazzmin Customize
+JAZZMIN_SETTINGS = {
+    'site_title': 'customize panel admin',
+    'site_header':'shop',
+    'site_brand':'you order, we deliver',
+    'site_log': 'static/logo/logo.png',
+    'site_icon':'static/logo/logo.png',
+    'welcome_sign':'welcome to your admin panel',
+    'copyright':'Amirhosein'
+}
