@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import CustomUser
 from .forms import RegistrationForm
-from django.contrib.auth import login,authenticate
+from django.contrib.auth import login,authenticate,logout
 from django.contrib import messages
 # Create your views here.
 
@@ -51,3 +51,9 @@ def login_view(request):
 
 
     return render(request,'auths/registration/login.html')
+
+
+def logout_view(request):
+    logout(request)
+    messages.success(request,"You are Logged Out")
+    return redirect('auths:sign-in')
