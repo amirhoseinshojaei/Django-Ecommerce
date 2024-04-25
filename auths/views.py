@@ -13,6 +13,7 @@ def signup_view(request):
             username = form.cleaned_data['username']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password1']
+            form.save()
             messages.success(request,f'Hey {username} Your account was successful created')
             new_user = authenticate(username=email,password=password)
             login(request,new_user)
