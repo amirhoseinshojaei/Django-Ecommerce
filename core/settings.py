@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Custom Apps
-    "auths.apps.AuthsConfig"
+    "auths.apps.AuthsConfig",
+    "shop.apps.ShopConfig",
 ]
 
 MIDDLEWARE = [

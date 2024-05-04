@@ -24,6 +24,7 @@ def signup_view(request):
     context = {'form':form}
     return render(request,'auths/registration/signup.html',context)
 
+
 def login_view(request):
 
     if request.user.is_authenticated:
@@ -51,6 +52,7 @@ def login_view(request):
 
 
     return render(request,'auths/registration/login.html')
+
 
 
 def logout_view(request):
