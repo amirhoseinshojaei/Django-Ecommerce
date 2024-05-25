@@ -11,7 +11,7 @@ def user_directory_path(instance,filename):
 
 class Category(models.Model):
 
-    cid = ShortUUIDField(unique = True , length = 10, max_length=20, prefix='cat',alphabet = "abcdefgh12345")
+    cid = ShortUUIDField(unique = True , max_length=20)
     title = models.CharField(max_length=250)
     slug = models.SlugField()
     image = models.ImageField(upload_to='shop/category/')
@@ -26,7 +26,7 @@ class Category(models.Model):
     
 class Vendor(models.Model):
 
-    vid = ShortUUIDField(unique = True , lenght = 10, max_length=20, prefix='ven',alphabet="abcdefgh12345")
+    vid = ShortUUIDField(unique = True , max_length=20)
     title = models.CharField(max_length=250)
     image = models.ImageField(upload_to=user_directory_path)
     description = models.TextField(null=True,blank=True)
