@@ -8,7 +8,7 @@ class ProductImagesAdmin(admin.TabularInline):
     model = ProductImages
 
 
-admin.site.register(ProductImages,ProductImagesAdmin)
+
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):

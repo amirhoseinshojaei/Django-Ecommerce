@@ -100,7 +100,7 @@ class Product(models.Model):
     old_price = models.DecimalField(max_digits=10,decimal_places=2,default="2.99")
 
     specification = models.TextField(null=True,blank=True)
-    tags = TaggableManager(null = True)
+    tags = TaggableManager()
     product_status = models.CharField(choices=STATUS,max_length=20,default="in_review")
 
     status = models.BooleanField(default=True)
@@ -108,7 +108,7 @@ class Product(models.Model):
     featured = models.BooleanField(default=False)
     digital = models.BooleanField(default=False)
 
-    sku = ShortUUIDField(unique=True,max_lenght = 20)
+    sku = ShortUUIDField(unique=True,max_length = 20)
 
     date = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
