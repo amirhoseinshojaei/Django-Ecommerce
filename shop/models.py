@@ -145,5 +145,71 @@ class ProductImages(models.Model):
     
 
 
+class CartOrder(models.Model):
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=10,decimal_places=2)
+    paid_status = models.BooleanField(default=False)
+    order_date = models.DateTimeField(auto_now_add=True)
+    product_status = models.CharField(choices=STATUS_CHOICE,max_length=30,default='processing')
+
+    class Meta:
+
+        verbose_name_plural = "Cart Orders"
 
 
+
+class CartOrderItem(models.Model):
+
+   pass
+
+
+
+class ProductReview(models.Model):
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.SET_NULL,null=True)
+    product = models.ForeignKey(Product,on_delete=models.SET_NULL,null=True)
+    review = models.TextField()
+
+    rating = models.IntegerField(choices=RATING,default=None)
+    date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+
+        verbose_name_plural = 'Product Reviews'
+
+    def __str__(self):
+
+        return self.product.title
+    
+    def get_rating(self):
+
+        return self.rating
+
+
+
+class Wishlist(models.Model):
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.SET_NULL,null=True)
+    product = models.ForeignKey(Product,on_delete=models.SET_NULL,null=True)
+    date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+
+        verbose_name_plural = "Wishlists"
+
+    def __str__(self):
+
+        return self.product.title
+    
+
+
+class Address(models.Model):
+
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.SET_NULL,null=True)
+    address = models.CharField(max_length=100,null=True)
+    status = models.BooleanField(default=False) 
+
+    class Meta:
+
+        verbose_name_plural = "Address"
