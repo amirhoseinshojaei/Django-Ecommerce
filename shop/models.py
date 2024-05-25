@@ -161,7 +161,17 @@ class CartOrder(models.Model):
 
 class CartOrderItem(models.Model):
 
-   pass
+   order = models.ForeignKey(CartOrder,on_delete=models.CASCADE)
+   invoice_no = models.CharField(max_length=200)
+   item = models.CharField(max_length=200)
+   image = models.CharField(max_length=200)
+   qty = models.IntegerField(default=0)
+   price = models.DecimalField(max_digits=10,decimal_places=2)
+   total = models.DecimalField(max_digits=10,decimal_places=2)
+
+   class Meta:
+       
+       verbose_name_plural = 'Cart Order Items'
 
 
 
