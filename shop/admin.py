@@ -8,7 +8,9 @@ class ProductImagesAdmin(admin.TabularInline):
     model = ProductImages
 
 
+admin.site.register(ProductImages,ProductImagesAdmin)
 
+@admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
 
     inlines = [ProductImagesAdmin]
@@ -17,13 +19,13 @@ class ProductAdmin(admin.ModelAdmin):
         'user','title','product_image','price','featured','product_status'
     ]
 
-
+@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
 
     list_display = ['title','category_image']
 
 
-
+@admin.register(Vendor)
 class VendorAdmin(admin.ModelAdmin):
 
     list_display =[
@@ -31,7 +33,7 @@ class VendorAdmin(admin.ModelAdmin):
         'user','title','vendor_image','contact',
     ]
 
-
+@admin.register(CartOrder)
 class CartOrderAdmin(admin.ModelAdmin):
 
     list_display = [
@@ -40,7 +42,7 @@ class CartOrderAdmin(admin.ModelAdmin):
     ]
 
 
-
+@admin.register(CartOrderItem)
 class CartOrderItemsAdmin(admin.ModelAdmin):
 
     list_display = [
@@ -49,7 +51,7 @@ class CartOrderItemsAdmin(admin.ModelAdmin):
     ]
 
 
-
+@admin.register(ProductReview)
 class ProductReviewAdmin(admin.ModelAdmin):
     
     list_display = [
@@ -65,7 +67,7 @@ class WishlistAdmin(admin.ModelAdmin):
         'user','product','date'
     ]
 
-
+@admin.register(Address)
 class AddressAdmin(admin.ModelAdmin):
 
     list_display = [
