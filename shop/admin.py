@@ -64,3 +64,11 @@ class WishlistAdmin(admin.ModelAdmin):
 
         'user','product','date'
     ]
+
+
+class AddressAdmin(admin.ModelAdmin):
+
+    list_display = [
+
+        'user','address','status'
+    ]
