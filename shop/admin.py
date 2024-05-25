@@ -18,3 +18,6 @@ class ProductAdmin(admin.ModelAdmin):
     ]
 
 
+class CategoryAdmin(admin.ModelAdmin):
+
+    list_display = ['title','category_image']
