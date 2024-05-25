@@ -51,4 +51,8 @@ class CartOrderItemsAdmin(admin.ModelAdmin):
 
 
 class ProductReviewAdmin(admin.ModelAdmin):
-    pass
+    
+    list_display = [
+
+        'user','product','review','rating'
+    ]
