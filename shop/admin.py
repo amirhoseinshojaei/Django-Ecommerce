@@ -56,3 +56,11 @@ class ProductReviewAdmin(admin.ModelAdmin):
 
         'user','product','review','rating'
     ]
+
+
+class WishlistAdmin(admin.ModelAdmin):
+
+    list_display = [
+
+        'user','product','date'
+    ]
