@@ -41,3 +41,14 @@ class CartOrderAdmin(admin.ModelAdmin):
 
 
 
+class CartOrderItemsAdmin(admin.ModelAdmin):
+
+    list_display = [
+
+        'order','invoice_no','item','image','qty','price','total'
+    ]
+
+
+
+class ProductReviewAdmin(admin.ModelAdmin):
+    pass
