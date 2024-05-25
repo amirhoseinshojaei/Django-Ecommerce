@@ -6,6 +6,40 @@ from taggit.managers import TaggableManager
 # Create your models here.
 
 
+
+STATUS_CHOICE = [
+    
+    ('process','Processing'),
+    ('shipped','Shipped'),
+    ('delivered','Delivered'),
+    ('process','Processing'),
+    ('process','Processing'),
+]
+
+
+
+STATUS = [
+
+    ('draft','Draft'),
+    ('disabled','Disabled'),
+    ('rjected','Regected'),
+    ('in_review','In Review'),
+    ('published','Published'),
+]
+
+
+
+
+RATING = [
+
+    (1,'⭐☆☆☆☆'),
+    (2,'⭐⭐☆☆☆'),
+    (3,'⭐⭐⭐☆☆'),
+    (4,'⭐⭐⭐⭐☆'),
+    (5,'⭐⭐⭐⭐⭐')
+]
+
+
 def user_directory_path(instance,filename):
 
     return 'user {0}/{1}'.format(instance,filename)
@@ -67,7 +101,7 @@ class Product(models.Model):
 
     specification = models.TextField(null=True,blank=True)
     tags = TaggableManager(null = True)
-    product_status = models.CharField(choices=STATUS,max_length=20,default="in_stock")
+    product_status = models.CharField(choices=STATUS,max_length=20,default="in_review")
 
     status = models.BooleanField(default=True)
     in_stock = models.BooleanField(default=True)
