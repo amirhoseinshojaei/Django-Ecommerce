@@ -21,3 +21,14 @@ class ProductAdmin(admin.ModelAdmin):
 class CategoryAdmin(admin.ModelAdmin):
 
     list_display = ['title','category_image']
+
+
+
+class VendorAdmin(admin.ModelAdmin):
+
+    list_display =[
+
+        'user','title','vendor_image','contact',
+    ]
+
+
