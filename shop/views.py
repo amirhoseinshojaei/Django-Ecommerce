@@ -13,3 +13,14 @@ def index(request):
     }
 
     return render(request,"shop/index.html",context)
+
+
+def product_list_view(request):
+
+    products = Product.objects.filter(product_status = 'published').order_by('-id')
+    context = {
+
+        'products':products
+    }
+
+    return render(request,'shop/product_list.html',context)
