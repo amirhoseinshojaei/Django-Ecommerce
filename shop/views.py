@@ -24,3 +24,14 @@ def product_list_view(request):
     }
 
     return render(request,'shop/product_list.html',context)
+
+
+def category_list_view(request):
+
+    categories = Category.objects.all()
+    context = {
+
+        'categories': categories
+    }
+
+    return render(request,'shop/category_list.html',context)
