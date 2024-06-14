@@ -41,7 +41,7 @@ def category_list_view(request):
 
 def category_product_list_view(request,cid):
 
-    category = Category.objects.get(cid=cid)
+    category = Category.objects.get(cid=cid) #or use get object or 404
     products = Product.objects.filter(product_status = 'published',category=category)
 
     context = {
