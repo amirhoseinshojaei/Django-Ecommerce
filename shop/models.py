@@ -101,6 +101,7 @@ class Product(models.Model):
     old_price = models.DecimalField(max_digits=10,decimal_places=2,default="2.99")
 
     specification = models.TextField(null=True,blank=True)
+    type = models.CharField(max_length=250,default="Organic")
     tags = TaggableManager()
     product_status = models.CharField(choices=STATUS,max_length=20,default="in_review")
 
