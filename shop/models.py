@@ -102,6 +102,7 @@ class Product(models.Model):
 
     specification = models.TextField(null=True,blank=True)
     type = models.CharField(max_length=250,default="Organic")
+    stock_count = models.CharField(max_length=4,default="8")
     tags = TaggableManager()
     product_status = models.CharField(choices=STATUS,max_length=20,default="in_review")
 
