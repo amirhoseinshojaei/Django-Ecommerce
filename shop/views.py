@@ -83,6 +83,7 @@ def product_detail_view(request,pid):
     context = {
 
         'product':product,
+        'p' : p_images
     }
 
     return render(request,'shop/product_detail.html',context)
